@@ -2,34 +2,46 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Mail, Github, Linkedin, MapPin, Send, Check } from "lucide-react";
+import { Mail, Github, Linkedin, MapPin, Send, Check, AlertCircle } from "lucide-react";
 import { SectionHeader } from "@/components/ui/section-header";
 import { Reveal } from "@/components/ui/reveal";
 
+type FormState = "idle" | "sending" | "sent" | "error";
+
 export function Contact() {
-  const [state, setState] = useState<"idle" | "sending" | "sent">("idle");
+  const [state, setState] = useState<FormState>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.email || !form.message) return;
+
     setState("sending");
+    setErrorMsg("");
 
-    // Open mailto with prefilled body — no backend dependency
-    const subject = `Portfolio contact from ${form.name || "anonymous"}`;
-    const body = `${form.message}\n\n— ${form.name || "anonymous"}\n${form.email}`;
-    const mailto = `mailto:teberramzi@gmail.com?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    setTimeout(() => {
-      window.location.href = mailto;
+      const data = await res.json();
+
+      if (!res.ok) {
+        setState("error");
+        setErrorMsg(data.error || "Something went wrong. Please try again.");
+        return;
+      }
+
       setState("sent");
-      setTimeout(() => {
-        setState("idle");
-        setForm({ name: "", email: "", message: "" });
-      }, 2500);
-    }, 700);
+      setForm({ name: "", email: "", message: "" });
+      setTimeout(() => setState("idle"), 3000);
+    } catch {
+      setState("error");
+      setErrorMsg("Network error. Please check your connection and try again.");
+    }
   };
 
   return (
@@ -124,13 +136,17 @@ export function Contact() {
 
               <button
                 type="submit"
-                disabled={state !== "idle"}
+                disabled={state === "sending"}
                 data-cursor="hover"
-                className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-accent/50 bg-accent/10 px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] text-accent transition-all hover:bg-accent/15 hover:shadow-glow disabled:opacity-70"
+                className={`group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] transition-all disabled:opacity-70 ${
+                  state === "error"
+                    ? "border-red-500/50 bg-red-500/10 text-red-400 hover:bg-red-500/15"
+                    : "border-accent/50 bg-accent/10 text-accent hover:bg-accent/15 hover:shadow-glow"
+                }`}
               >
                 <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-accent/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
                 <AnimatePresence mode="wait" initial={false}>
-                  {state === "idle" && (
+                  {(state === "idle" || state === "error") && (
                     <motion.span
                       key="idle"
                       initial={{ opacity: 0, y: 8 }}
@@ -138,7 +154,11 @@ export function Contact() {
                       exit={{ opacity: 0, y: -8 }}
                       className="flex items-center gap-2"
                     >
-                      Send message <Send size={14} />
+                      {state === "error" ? (
+                        <>Retry <Send size={14} /></>
+                      ) : (
+                        <>Send message <Send size={14} /></>
+                      )}
                     </motion.span>
                   )}
                   {state === "sending" && (
@@ -165,15 +185,21 @@ export function Contact() {
                       exit={{ opacity: 0, y: -8 }}
                       className="flex items-center gap-2"
                     >
-                      <Check size={14} /> Sent · opening mail client
+                      <Check size={14} /> Message delivered
                     </motion.span>
                   )}
                 </AnimatePresence>
               </button>
 
+              {state === "error" && errorMsg && (
+                <p className="flex items-center gap-2 font-mono text-[11px] text-red-400">
+                  <AlertCircle size={12} />
+                  {errorMsg}
+                </p>
+              )}
+
               <p className="font-mono text-[10px] text-ink-muted">
-                Submitting opens your default mail client with a prefilled draft.
-                No data is stored.
+                Your message is sent directly to my inbox via SMTP. No data is stored.
               </p>
             </form>
           </Reveal>

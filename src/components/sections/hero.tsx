@@ -143,7 +143,7 @@ export function Hero() {
                 View Projects
                 <ArrowDown size={14} />
               </MagneticButton>
-              <MagneticButton href="/resume.pdf" variant="ghost" download>
+              <MagneticButton href="/TEBER-RAMZI's_CV__ENG_.pdf" variant="ghost" download>
                 <Download size={14} />
                 Download Resume
               </MagneticButton>

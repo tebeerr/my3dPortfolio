@@ -4,10 +4,11 @@ import { motion, useMotionValue, useSpring } from "motion/react";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
-interface MagneticButtonProps extends React.HTMLAttributes<HTMLAnchorElement> {
+interface MagneticButtonProps {
   href?: string;
   variant?: "primary" | "ghost";
   children: React.ReactNode;
+  className?: string;
   download?: boolean | string;
   target?: string;
   rel?: string;
@@ -21,7 +22,6 @@ export function MagneticButton({
   download,
   target,
   rel,
-  ...props
 }: MagneticButtonProps) {
   const ref = useRef<HTMLAnchorElement>(null);
   const x = useMotionValue(0);
@@ -63,7 +63,6 @@ export function MagneticButton({
           "border border-edge/60 text-ink-muted hover:border-accent/50 hover:text-accent",
         className
       )}
-      {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
     >
       <span className="relative z-10 flex items-center gap-2">{children}</span>
       <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-accent/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
