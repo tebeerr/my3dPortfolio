@@ -42,7 +42,7 @@ export function Contact() {
           index="05"
           label="Open channel"
           title="Let's build something."
-          description="SOC analyst roles, cybersecurity internships, freelance projects, or just a good conversation about secure systems. Inbox is open."
+          description="Software developer first, cybersecurity internships, SOC analyst roles , freelance projects, or just a good conversation about secure systems. Inbox is open."
           align="center"
         />
 
@@ -80,9 +80,9 @@ export function Contact() {
               <p className="mono-label mb-2">Status</p>
               <p className="text-sm text-ink-muted">
                 Actively interviewing for{" "}
-                <span className="text-accent">SOC Analyst</span>,{" "}
-                <span className="text-accent">Cybersecurity Engineer</span>,
-                Sysadmin, and Networks/Telecom Consultant roles in the Tunisian
+                <span className="text-accent">Software Developer</span>,{" "}
+                <span className="text-accent">Cybersecurity Engineer</span>, 
+                <span className="text-accent">SOC Analyst</span> and <span className="text-accent">Networks/Telecom Consultant</span> roles in the Tunisian
                 market.
               </p>
             </div>

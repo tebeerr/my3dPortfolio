@@ -121,9 +121,8 @@ export function About() {
                 <p>
                   I'm <strong className="text-ink">Ramzi Teber</strong> — known
                   online as <span className="font-mono text-accent">RAMSEES</span>{" "}
-                  — a final-year engineering student specializing in IT Systems
-                  Security & Networks at TEK-UP University, and a working
-                  Angular / PHP developer at KARMA SOLUTION.
+                  — a full-stack ANGULAR / PHP developer and engineering student specializing in IT Systems
+                  Security & Networks at TEK-UP University.
                 </p>
                 <p className="text-ink-muted">
                   My profile is intentionally hybrid: I write production code by
@@ -151,7 +150,7 @@ export function About() {
                 />
                 <StatCard
                   icon={<Code2 size={16} />}
-                  value="4+"
+                  value="2+"
                   label="Years coding"
                 />
                 <StatCard
@@ -172,12 +171,11 @@ export function About() {
                 <p className="mono-label mb-3">Current focus</p>
                 <ul className="space-y-2 text-sm text-ink-muted">
                   <FocusItem>
-                    SOC analyst preparation — Wazuh, SIEM workflows, alert
-                    engineering
+                    Open source web applications penetration testing — OWASP
                   </FocusItem>
                   <FocusItem>
-                    Kubernetes certifications (CKAD, CKA, CKS) + GitLab CI/CD
-                    optimization
+                    SOC analyst preparation — Wazuh, SIEM workflows, alert
+                    engineering
                   </FocusItem>
                   <FocusItem>
                     AI-augmented security tooling — ML detectors, RAG-backed

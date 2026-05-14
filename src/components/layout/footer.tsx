@@ -22,7 +22,7 @@ export function Footer() {
             <FooterLink href="https://github.com/tebeerr" icon={<Github size={14} />} label="GitHub" />
             <FooterLink href="https://linkedin.com/in/ramzi-teber-44749321b" icon={<Linkedin size={14} />} label="LinkedIn" />
             <FooterLink href="mailto:teberramzi@gmail.com" icon={<Mail size={14} />} label="Email" />
-            <FooterLink href="/cv.pdf" icon={<FileText size={14} />} label="Resume" />
+            <FooterLink href="/resume.pdf" icon={<FileText size={14} />} label="Resume" download />
           </div>
         </div>
 
@@ -43,16 +43,20 @@ function FooterLink({
   href,
   icon,
   label,
+  download,
 }: {
   href: string;
   icon: React.ReactNode;
   label: string;
+  download?: boolean;
 }) {
+  const isExternal = href.startsWith("http") || href.startsWith("mailto:");
   return (
     <a
       href={href}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      download={download || undefined}
       data-cursor="hover"
       className="group inline-flex items-center gap-2 rounded-full border border-edge/60 px-3 py-1.5 font-mono text-[11px] uppercase tracking-widest text-ink-muted transition-all hover:border-accent/60 hover:text-accent"
     >

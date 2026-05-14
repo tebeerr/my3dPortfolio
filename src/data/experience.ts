@@ -10,41 +10,43 @@ export type Experience = {
 };
 
 export const experiences: Experience[] = [
-  {
-    role: "Angular / PHP Developer & SysAdmin",
-    company: "KARMA SOLUTION",
+   {
+    role: "Software developer intern",
+    company: "LEPNEUMATIQUE",
     location: "Tunis, Tunisia",
-    period: "2024 — Present",
-    type: "work",
+    period: "2023",
+    type: "education",
     description:
-      "Hybrid technical role bridging frontend engineering, backend APIs, infrastructure and security operations across client projects.",
-    stack: ["Angular", "PHP", "Symfony", "Docker", "Linux", "CI/CD"],
+      "Led the Development of controllers for customer, product and orders.",
+    stack: ["Angular", "Typescript", "Rest-API", "PHP", "Firebase","CI/CD"],
     achievements: [
-      "Built and maintained Angular applications with PHP/Symfony backends",
-      "Administered Linux servers, Docker containers and CI/CD pipelines",
-      "Implemented monitoring and hardening across production systems",
+      "Designed and implemented user-friendly interfaces to enhance usability and accessibility",
+      "Development and optimization of REST APIs in PHP and Python Odoo, integrating SQL and NoSQL databases.",
+      "Gained valuable experience in translating real-world needs into innovative digital solutions, refining web development and problem-solving skills."
     ],
   },
   {
-    role: "Backend Developer (Spring Boot Microservices)",
-    company: "Latitude Sport — uticket platform",
-    location: "Remote",
-    period: "2024",
+    role: "Angular Frontend Developer",
+    company: "KARMA SOLUTION",
+    location: "Tunis, Tunisia",
+    period: "2023 — 2025",
     type: "work",
     description:
-      "Worked on GitLab CI/CD optimization for 23+ Java Spring Boot microservices deployed to Azure Container Registry, plus PDF generation and KoolReport dashboards on the uticket PHP platform.",
-    stack: ["Java", "Spring Boot", "PHP", "Azure", "GitLab CI", "Docker"],
+      "Hybrid technical role bridging frontend engineering, backend APIs, infrastructure and security operations across client projects.",
+    stack: ["Angular", "Typescript", "JavaScript", "Flutter", "Firebase", "Symfony","CI/CD"],
     achievements: [
-      "Resolved cascading CI/CD failures (artifact size, runner disk, DinD)",
-      "Designed local runner cache strategy with push/pull policies",
-      "Built Belgian fiscal-attestation PDF generation (281.86 form, FPDI)",
+      "Developing and maintaining web applications using Angular and other related technologies",
+      "Build and sustain high-performance mobile applications utilizing Flutter and associated frameworks",
+      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products",
+      "Implementing responsive design and ensuring cross-browser compatibility",
+      "Participating in code reviews and providing constructive feedback to other developers",
     ],
   },
   {
     role: "Engineering Degree — IT Systems Security & Networks",
     company: "TEK-UP University",
     location: "Tunis, Tunisia",
-    period: "2021 — 2026",
+    period: "2024 - present",
     type: "education",
     description:
       "Final-year engineering student in the ING-SSIR program — IT Systems Security & Networks. Curriculum covers cryptography, network architecture, ethical hacking and secure software design.",

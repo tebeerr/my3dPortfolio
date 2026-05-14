@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Html, Stars, Trail } from "@react-three/drei";
+import { Stars } from "@react-three/drei";
 import { Suspense, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import { skillGroups, type Skill } from "@/data/skills";

@@ -8,7 +8,7 @@ interface MagneticButtonProps extends React.HTMLAttributes<HTMLAnchorElement> {
   href?: string;
   variant?: "primary" | "ghost";
   children: React.ReactNode;
-  download?: string;
+  download?: boolean | string;
   target?: string;
   rel?: string;
 }
