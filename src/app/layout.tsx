@@ -70,6 +70,10 @@ export const metadata: Metadata = {
     description:
       "Building secure, scalable systems. Angular · Python · AI · Cloud · Networking.",
   },
+  icons: {
+    icon: "/ramsees_logo.png",
+    apple: "/ramsees_logo.png",
+  },
 };
 
 export default function RootLayout({

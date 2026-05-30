@@ -31,7 +31,7 @@ export function Footer() {
             © {new Date().getFullYear()} Ramzi Teber. All systems operational.
           </span>
           <span className="font-mono text-accent/70">
-            v1.0.0 — built with intent
+            v1.0.1
           </span>
         </div>
       </div>

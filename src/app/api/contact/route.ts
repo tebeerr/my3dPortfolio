@@ -131,7 +131,7 @@ export async function POST(request: Request) {
   const transporter = createTransport();
   if (!transporter) {
     return NextResponse.json(
-      { error: "Mail service is not configured. Please contact me directly at teberramzi@gmail.com." },
+      { error: "Mail service is under construction . Please contact me directly at teberramzi@gmail.com." },
       { status: 503 }
     );
   }
