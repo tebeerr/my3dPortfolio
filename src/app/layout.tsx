@@ -5,6 +5,7 @@ import { Cursor } from "@/components/layout/cursor";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { SmoothScrollProvider } from "@/components/layout/smooth-scroll-provider";
+import { Analytics } from "@vercel/analytics/next";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -90,6 +91,7 @@ export default function RootLayout({
           <main className="relative z-10">{children}</main>
           <Footer />
         </SmoothScrollProvider>
+        <Analytics />
       </body>
     </html>
   );
