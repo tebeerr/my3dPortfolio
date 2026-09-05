@@ -22,7 +22,7 @@ export function Footer() {
             <FooterLink href="https://github.com/tebeerr" icon={<Github size={14} />} label="GitHub" />
             <FooterLink href="https://linkedin.com/in/ramzi-teber-44749321b" icon={<Linkedin size={14} />} label="LinkedIn" />
             <FooterLink href="mailto:teberramzi@gmail.com" icon={<Mail size={14} />} label="Email" />
-            <FooterLink href="/TEBER-RAMZI's_CV__ENG_.pdf" icon={<FileText size={14} />} label="Resume" download />
+            <FooterLink href="/RamziTeber_EN.pdf" icon={<FileText size={14} />} label="Resume" download />
           </div>
         </div>
 

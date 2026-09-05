@@ -106,10 +106,10 @@ export function About() {
                 className="absolute -right-4 -top-4 hidden rotate-3 rounded-md border border-accent/40 bg-bg-deep/90 px-3 py-2 shadow-glow backdrop-blur sm:block"
               >
                 <p className="font-mono text-[10px] uppercase tracking-widest text-accent">
-                  ING-4-J-SSIR
+                  CyberSecurity Engineer
                 </p>
                 <p className="mt-0.5 font-mono text-[10px] text-ink-muted">
-                  TEK-UP · 2026
+                  TEK-UP · 2027
                 </p>
               </motion.div>
             </div>

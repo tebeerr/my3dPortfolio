@@ -15,6 +15,25 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "Automated-Web-Penetration-Testing-Platform",
+    title: "Automated-Web-Penetration-Testing-Platform",
+    tagline: "Automated web pentest platform with real-time reporting",
+    description:
+      "A web app lets you kick off a scan against a target URL, watch it progress phase-by-phase in real time, and review the findings and generated reports without touching a terminal.",
+    longDescription:
+      "Sentinel is a full-stack wrapper around PentestKit, a Python CLI scanner that chains together industry-standard recon and vulnerability tools into one automated 10-phase engagement. The web app lets you kick off a scan against a target URL, watch it progress phase-by-phase in real time, and review the findings and generated reports without touching a terminal.Authorized use only. Only run Sentinel against targets you own or have explicit written permission to test. Unauthorized scanning is illegal. Sentinel currently has no built-in domain-ownership verification or SSRF protection — see Known limitations below.",
+    stack: ["Python", "subfinder", "host", "Dig", "WHOIS", "katana scanner", "nmap", "nikto", "sqlmap", "gobuster", "sslscan", "wafw00f", "whatweb"],
+    category: "Security",
+    highlights: [
+      "Automated 10-phase web penetration testing",
+      "Real-time scan progress and reporting",
+      "Full-stack web interface for CLI scanner",
+    ],
+    github: "https://github.com/tebeerr/auto-pentest",
+    year: "2026",
+    featured: true,
+  },
+  {
     slug: "ragfy",
     title: "RAGfy",
     tagline: "LLM chatbot with retrieval-augmented generation",
@@ -31,6 +50,25 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/tebeerr/RAGfy",
     year: "2025",
+    featured: true,
+  },
+  {
+    slug: "ATS Resume Analyzer",
+    title: "ATS Resume Analyzer",
+    tagline: "Automated applicant tracking system for resume evaluation",
+    description:
+      "A local, deterministic resume-review tool that estimates ATS compatibility. It accepts PDF and DOCX resumes, optionally matches them to a job description, stores results locally in SQLite, and exports a readable report.",
+    longDescription:
+      "ATS Resume Analyzer is a Python tool that evaluates resumes for compatibility with applicant tracking systems (ATS). It accepts PDF and DOCX resumes, optionally matches them to a job description, stores results locally in SQLite, and exports a readable report. The tool uses deterministic parsing and scoring to provide actionable feedback on resume formatting, keyword usage, and overall ATS-friendliness.",
+    stack: ["Python", "Typescript", "Tailwind CSS", "PDF parsing", "DOCX parsing", "SQLite", "Resume analysis"],
+    category: "Full-Stack",
+    highlights: [
+      "Sub-second retrieval over user document corpus",
+      "Streaming responses via Groq inference",
+      "Pluggable embedding + vector store layer",
+    ],
+    github: "https://github.com/tebeerr/perso-ats",
+    year: "2026",
     featured: true,
   },
   {
